@@ -1,0 +1,286 @@
+// =========================
+// Variables
+// =========================
+$color-primary: #aae0e0;
+$color-secondary: #2a2640;
+$color-bg: #fdf6ff;
+$color-text: #2b2233;
+$color-muted: #7b6a8b;
+
+$font-main: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  sans-serif;
+
+// =========================
+// Reset básico
+// =========================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $color-bg;
+  color: $color-text;
+}
+
+// =========================
+// Hero layout
+// =========================
+.hero {
+  min-height: 100vh;
+  padding: 2rem 5rem;
+  background-color: $color-bg;
+  display: flex;
+  flex-direction: column;
+}
+
+// =========================
+// Navegación
+// =========================
+.hero__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.hero__logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: $color-secondary;
+}
+
+.hero__menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: $color-muted;
+    font-size: 0.95rem;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// =========================
+// Botones
+// =========================
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  font-weight: 500;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.btn--primary {
+  background-color: $color-primary;
+  color: white;
+}
+
+.btn--ghost {
+  background-color: transparent;
+  color: $color-secondary;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+}
+
+// =========================
+// Contenido hero
+// =========================
+.hero__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hero__text {
+  max-width: 540px;
+}
+
+.hero__tagline {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-primary;
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-size: 2.7rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $color-secondary;
+}
+
+.hero__subtitle {
+  font-size: 0.98rem;
+  color: $color-muted;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.hero__cta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero__video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  color: $color-secondary;
+  font-size: 0.95rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.hero__stats {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.hero__stat-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $color-secondary;
+}
+
+.hero__stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: $color-muted;
+}
+
+// =========================
+// Columna derecha (imagen + tarjetas)
+// =========================
+.hero__visual {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__image-wrapper {
+  width: 320px;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffd6eb, #fef7ff);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// =========================
+// Tarjetas
+// =========================
+.hero-card {
+  position: absolute;
+  background: white;
+  border-radius: 18px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  max-width: 240px;
+  font-size: 0.78rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+  }
+}
+
+.hero-card--testimonial {
+  top: 8%;
+  left: -6%;
+}
+
+.hero-card--product {
+  bottom: 5%;
+  right: -6%;
+}
+
+.hero-card__text {
+  color: $color-muted;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+
+  &--small {
+    font-size: 0.75rem;
+  }
+}
+
+.hero-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-card__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $color-primary, #ffb5e0);
+}
+
+.hero-card__name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: $color-secondary;
+}
+
+.hero-card__role {
+  font-size: 0.7rem;
+  color: $color-muted;
+}
+
+.hero-card__title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: $color-secondary;
+}
